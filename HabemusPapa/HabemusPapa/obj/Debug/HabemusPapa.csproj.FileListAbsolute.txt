@@ -1,0 +1,6 @@
+D:\PapaStellisano\HabemusPapa\HabemusPapa\bin\Debug\HabemusPapa.exe.config
+D:\PapaStellisano\HabemusPapa\HabemusPapa\obj\Debug\HabemusPapa.csprojResolveAssemblyReference.cache
+D:\PapaStellisano\HabemusPapa\HabemusPapa\bin\Debug\HabemusPapa.exe
+D:\PapaStellisano\HabemusPapa\HabemusPapa\bin\Debug\HabemusPapa.pdb
+D:\PapaStellisano\HabemusPapa\HabemusPapa\obj\Debug\HabemusPapa.exe
+D:\PapaStellisano\HabemusPapa\HabemusPapa\obj\Debug\HabemusPapa.pdb
