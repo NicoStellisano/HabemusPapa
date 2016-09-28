@@ -18,10 +18,12 @@ namespace HabemusPapa
 
         static Conclave()
         {
-            Conclave con;
+            /*Conclave con;
             con = new Conclave();
+             */
            cantidadVotaciones = 0;
            fechaVotacion = DateTime.Today;
+           
         }
             
             
@@ -95,11 +97,12 @@ namespace HabemusPapa
             sb.AppendLine("Fecha de Votacion : " + fechaVotacion);
             sb.AppendLine("Cantidad de votos : " + cantidadVotaciones);
             if (_habemusPapa == true)
-                sb.AppendLine("HABEMUS PAPA ");
+                sb.AppendLine("HABEMUS PAPA " + Cardenal.Mostrar(this._papa));
             else
+            {
                 sb.AppendLine("NO HABEMUS PAPA ");
-            sb.AppendLine(this.MostrarCardenales());
-
+                sb.AppendLine(this.MostrarCardenales());
+            }
             return sb.ToString();
 
 
@@ -162,13 +165,18 @@ namespace HabemusPapa
         }
         public static void VotarPapa(Conclave conclave)
         {
-            int indicePapal;
             Random objRandom = new Random();
+
+            
+            int indicePapal;
+            
             for (int i = 0; i < conclave._cardenales.Count; i++)      
             {
                 indicePapal = objRandom.Next(0, conclave._cardenales.Count);
                 conclave._cardenales[indicePapal]++;
+                Conclave.cantidadVotaciones++;
             }
+            conclave.ContarVotos(conclave);
         }
 
 
