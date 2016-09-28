@@ -56,7 +56,7 @@ namespace HabemusPapa
 
         public string ObtenerNombreYNombrePapal()
         {
-            string concatenado = "El cardenal" + this._nombre + " se llamara Papa " +this._nombrePapal;
+            string concatenado = "El cardenal " + this._nombre + " se llamara Papa " +this._nombrePapal;
 
             return concatenado;
         }

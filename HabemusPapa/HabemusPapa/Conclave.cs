@@ -22,9 +22,7 @@ namespace HabemusPapa
             con = new Conclave();
            cantidadVotaciones = 0;
            fechaVotacion = DateTime.Today;
-            
-           
-           }
+        }
             
             
 
@@ -62,6 +60,8 @@ namespace HabemusPapa
                     conclave._papa = item;
                     break;
                 }
+                else
+                    ganador = item.getCantidadVotosRecibidos();
                 
             }
             if (conclave._habemusPapa != true)
@@ -98,10 +98,7 @@ namespace HabemusPapa
                 sb.AppendLine("HABEMUS PAPA ");
             else
                 sb.AppendLine("NO HABEMUS PAPA ");
-            foreach (Cardenal item in this._cardenales)
-            {
-                sb.AppendLine(Cardenal.Mostrar(item));
-            }
+            sb.AppendLine(this.MostrarCardenales());
 
             return sb.ToString();
 
@@ -111,6 +108,8 @@ namespace HabemusPapa
         private string MostrarCardenales()
         {
             StringBuilder sb = new StringBuilder();
+            sb.AppendLine("CARDENALES:");
+            sb.AppendLine();
             foreach (Cardenal item in this._cardenales)
             {
                 sb.AppendLine(Cardenal.Mostrar(item));
@@ -137,7 +136,7 @@ namespace HabemusPapa
                 {
                     if (item == c)
                     {
-                        Console.Write("El cardenal ya está en el Cónclave!!!");
+                        Console.WriteLine("El cardenal ya está en el Cónclave!!!");
                         return con;
                     }
                     
@@ -145,7 +144,7 @@ namespace HabemusPapa
                 con._cardenales.Add(c);
                 return con;
             }else{
-                Console.Write("No hay mas lugar !!!");
+                Console.WriteLine("No hay mas lugar !!!");
                 return con;
             }
         }
@@ -165,7 +164,7 @@ namespace HabemusPapa
         {
             int indicePapal;
             Random objRandom = new Random();
-            foreach (Cardenal item in conclave._cardenales)
+            for (int i = 0; i < conclave._cardenales.Count; i++)      
             {
                 indicePapal = objRandom.Next(0, conclave._cardenales.Count);
                 conclave._cardenales[indicePapal]++;
